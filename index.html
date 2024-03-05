@@ -10,6 +10,8 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* NAV */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -40,6 +42,48 @@ body {
 .nav-links li {
   padding: 0 10px;
 }
+/* END NAV */
+
+/* HEADER */
+.header {
+  background-image: url('pfad-zum-hintergrundbild.jpg'); /* Pfad zum Hintergrundbild */
+  height: 100vh; /* 100% der Viewport-Höhe */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: black;
+}
+
+.header-content {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-content h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.header-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #d3a760;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+.header-button:hover {
+  background-color: #cda589;
+}
+/* END HEADER */
 </style>
 </head>
 <body>
@@ -54,5 +98,13 @@ body {
     <li><a href="#" style="background-color: #cda589; padding: 5px 15px; border-radius: 5px;">Termin Buchen</a></li>
   </ul>
 </nav>
+<div class="header">
+    <div class="header-content">
+      <h1>Kosmetik Studio Excellent</h1>
+      <p>Entdecken Sie Schönheit & Entspannung im Herzen von Köln bei Kosmetik Studio Excellent - wo Ihre Wohlfühlreise beginnt!</p>
+      <a href="#" class="header-button">Unsere Behandlungen</a>
+      <a href="#" class="header-button">Termin Buchen</a>
+    </div>
+  </div>
 </body>
 </html>
