@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kosmetik Studio Excellent</title>
     <style>
+      :root {
+        --background-color: #f3eeea;
+        --secondary-background-color: #ebe3d5;
+        --accent-color: #b0a695;
+        --text-color: #776b5d;
+      }
+
       body {
-        font-family: "Arial", sans-serif;
+        font-family: "Raleway", sans-serif; /* Raleway als primäre Schriftart */
         margin: 0;
         padding: 0;
+        background-color: var(--background-color);
       }
 
       /* NAV */
@@ -16,18 +24,18 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #f8d7b4;
-        color: white;
+        background-color: var(--accent-color);
+        color: var(--text-color);
         padding: 10px 20px;
       }
       .navbar a {
-        color: white;
+        color: var(--text-color);
         text-decoration: none;
         margin: 0 15px;
         font-weight: bold;
       }
       .navbar a:hover {
-        color: #cda589;
+        color: var(--secondary-background-color);
       }
       .brand-logo {
         font-size: 24px;
@@ -46,14 +54,12 @@
 
       /* HEADER */
       .header {
-        background-image: url("pfad-zum-hintergrundbild.jpg"); /* Pfad zum Hintergrundbild */
-        height: 100vh; /* 100% der Viewport-Höhe */
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        height: 100vh;
         position: relative;
-        color: black;
+        color: var(--text-color);
+        background-color: var(
+          --secondary-background-color
+        ); /* Changed to a color variable */
       }
 
       .header-content {
@@ -72,8 +78,8 @@
       .header-button {
         display: inline-block;
         padding: 10px 20px;
-        background-color: #d3a760;
-        color: white;
+        background-color: var(--accent-color);
+        color: var(--text-color);
         text-decoration: none;
         border-radius: 5px;
         margin: 5px;
@@ -81,7 +87,7 @@
       }
 
       .header-button:hover {
-        background-color: #cda589;
+        background-color: var(--secondary-background-color);
       }
       /* END HEADER */
 
@@ -93,6 +99,7 @@
         margin: 50px 0;
         overflow: hidden;
         transition: transform 0.5s ease-out;
+        background-color: var(--background-color);
       }
       .card-item:nth-child(odd) .card-image {
         order: 2;
@@ -116,11 +123,12 @@
       }
       .card-text {
         text-align: left;
+        color: var(--text-color);
       }
       .card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         transition: 0.3s;
-        background-color: #fff;
+        background-color: var(--secondary-background-color);
         border-radius: 10px;
         overflow: hidden;
       }
@@ -128,7 +136,7 @@
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
       }
 
-      @media screen and (max-width: 768px) {
+      @media screen and max-width: 768px {
         .card-item {
           flex-direction: column;
         }
