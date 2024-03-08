@@ -13,64 +13,66 @@
       }
 
       body {
-        font-family: "Raleway", sans-serif; /* Raleway als primäre Schriftart */
+        font-family: "Raleway", sans-serif;
         margin: 0;
         padding: 0;
         background-color: var(--background-color);
       }
 
-      /* NAV */
+      /* Navbar Styles */
       .navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
         background-color: var(--accent-color);
-        color: var(--text-color);
         padding: 10px 20px;
       }
+
       .navbar a {
         color: var(--text-color);
         text-decoration: none;
         margin: 0 15px;
         font-weight: bold;
       }
+
       .navbar a:hover {
         color: var(--secondary-background-color);
       }
+
       .brand-logo {
         font-size: 24px;
         font-weight: bold;
       }
+
       .nav-links {
         display: flex;
         list-style: none;
         margin: 0;
         padding: 0;
       }
+
       .nav-links li {
         padding: 0 10px;
       }
-      /* END NAV */
+      /* End Navbar Styles */
 
-      /* HEADER */
+      /* Header Styles */
       .header {
         height: 100vh;
-        position: relative;
+        background-color: var(--secondary-background-color);
         color: var(--text-color);
-        background-color: var(
-          --secondary-background-color
-        ); /* Changed to a color variable */
+        position: relative;
+        text-align: center;
       }
 
       .header-content {
-        text-align: center;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
       }
 
-      .header-content h1 {
+      .header h1 {
         font-size: 50px;
         margin-bottom: 20px;
       }
@@ -89,29 +91,66 @@
       .header-button:hover {
         background-color: var(--secondary-background-color);
       }
-      /* END HEADER */
+      /* End Header Styles */
 
-      /* CARD */
+      /* Grid Styles */
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .grid-item {
+        background-color: var(--secondary-background-color);
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .grid-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+
+      .grid-item h3 {
+        font-weight: 700;
+        color: var(--text-color);
+      }
+      /* End Grid Styles */
+
+      /* Card Styles */
+      .card-container {
+        margin: 50px 0;
+      }
+
       .card-item {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 50px 0;
         overflow: hidden;
         transition: transform 0.5s ease-out;
         background-color: var(--background-color);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
       }
+
       .card-item:nth-child(odd) .card-image {
         order: 2;
       }
+
       .card-item:nth-child(even) .card-text {
         order: 2;
       }
+
       .card-image,
       .card-text {
         flex: 50%;
-        transition: transform 0.5s ease-out;
+        padding: 20px;
       }
+
       .card-image img,
       .card-text {
         width: 100%;
@@ -119,37 +158,41 @@
         height: auto;
         display: block;
         margin: 0 auto;
-        padding: 20px;
       }
+
       .card-text {
         text-align: left;
         color: var(--text-color);
       }
-      .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
-        background-color: var(--secondary-background-color);
-        border-radius: 10px;
-        overflow: hidden;
-      }
+
       .card:hover {
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
       }
 
-      @media screen and max-width: 768px {
+      @media screen and (max-width: 768px) {
         .card-item {
           flex-direction: column;
         }
+
         .card-item .card-text,
         .card-item .card-image {
           order: unset;
         }
+
         .card-image img,
         .card-text {
           max-width: 100%;
         }
       }
-      /* END CARD */
+      /* End Card Styles */
+
+      /* Responsive Styles */
+      @media screen and (max-width: 768px) {
+        .grid-container {
+          grid-template-columns: 1fr;
+        }
+      }
+      /* End Responsive Styles */
     </style>
   </head>
   <body>
@@ -174,7 +217,7 @@
         </li>
       </ul>
     </nav>
-    <div class="header">
+    <header class="header">
       <div class="header-content">
         <h1>Kosmetik Studio Excellent</h1>
         <p>
@@ -184,70 +227,104 @@
         <a href="#" class="header-button">Unsere Behandlungen</a>
         <a href="#" class="header-button">Termin Buchen</a>
       </div>
-    </div>
-    <div class="card-item">
-      <div class="card-image card">
-        <img
-          src="https://images.unsplash.com/photo-1623225088166-eea1cdc9775a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Gesichtsbehandlung"
-        />
+    </header>
+    <section class="cards">
+      <div class="card-item">
+        <div class="card-image card">
+          <img
+            src="https://images.unsplash.com/photo-1623225088166-eea1cdc9775a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Gesichtsbehandlung"
+          />
+        </div>
+        <div class="card-text card">
+          <h2>Gesicht</h2>
+          <p>
+            Erleben Sie eine erfrischende Gesichtsbehandlung für klare und
+            strahlende Haut.
+          </p>
+        </div>
       </div>
-      <div class="card-text card">
-        <h2>Gesicht</h2>
-        <p>
-          Erleben Sie eine erfrischende Gesichtsbehandlung für klare und
-          strahlende Haut.
-        </p>
-      </div>
-    </div>
+    </section>
+    <section class="grid">
+      <div class="grid-container">
+        <!-- Erstes Grid-Element -->
+        <div class="grid-item">
+          <img
+            src="https://source.unsplash.com/random/?massage"
+            alt="Traditionelle Thai Massage"
+          />
+          <h3>Traditionelle Thai Massage</h3>
+        </div>
 
-    <div class="card-item">
-      <div class="card-text card">
-        <h2>Peeling</h2>
-        <p>
-          Unser sanftes Peeling entfernt abgestorbene Hautzellen und fördert
-          eine gesunde Hauterneuerung.
-        </p>
-      </div>
-      <div class="card-image card">
-        <img
-          src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?q=80&w=1601&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Peeling"
-        />
-      </div>
-    </div>
+        <!-- Zweites Grid-Element -->
+        <div class="grid-item">
+          <img
+            src="https://source.unsplash.com/random/?oil massage"
+            alt="Thai Öl Massage"
+          />
+          <h3>Thai Öl Massage</h3>
+        </div>
 
-    <div class="card-item">
-      <div class="card-image card">
-        <img
-          src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Needling"
-        />
-      </div>
-      <div class="card-text card">
-        <h2>Needling</h2>
-        <p>
-          Micro-Needling stimuliert die Haut, um die Produktion von Kollagen zu
-          erhöhen und das Erscheinungsbild zu verbessern.
-        </p>
-      </div>
-    </div>
+        <!-- Drittes Grid-Element -->
+        <div class="grid-item">
+          <img
+            src="https://source.unsplash.com/random/?aromatherapy"
+            alt="Aroma Therapie Massage"
+          />
+          <h3>Aroma Therapie Massage</h3>
+        </div>
 
-    <div class="card-item">
-      <div class="card-text card">
-        <h2>Carboxy</h2>
-        <p>
-          Die Carboxytherapie verbessert die Hautelastizität und reduziert das
-          Erscheinungsbild von feinen Linien und Falten.
-        </p>
+        <!-- Weitere Grid-Elemente ... -->
+
+        <div class="card-item">
+          <div class="card-text card">
+            <h2>Peeling</h2>
+            <p>
+              Unser sanftes Peeling entfernt abgestorbene Hautzellen und fördert
+              eine gesunde Hauterneuerung.
+            </p>
+          </div>
+          <div class="card-image card">
+            <img
+              src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?q=80&w=1601&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Peeling"
+            />
+          </div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-image card">
+            <img
+              src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Needling"
+            />
+          </div>
+          <div class="card-text card">
+            <h2>Needling</h2>
+            <p>
+              Micro-Needling stimuliert die Haut, um die Produktion von Kollagen
+              zu erhöhen und das Erscheinungsbild zu verbessern.
+            </p>
+          </div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-text card">
+            <h2>Carboxy</h2>
+            <p>
+              Die Carboxytherapie verbessert die Hautelastizität und reduziert
+              das Erscheinungsbild von feinen Linien und Falten.
+            </p>
+          </div>
+          <div class="card-image card">
+            <img
+              src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Carboxytherapie"
+            />
+          </div>
+        </div>
       </div>
-      <div class="card-image card">
-        <img
-          src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Carboxytherapie"
-        />
-      </div>
-    </div>
+    </section>
   </body>
 </html>
 
