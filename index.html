@@ -94,97 +94,63 @@
       /* End Header Styles */
 
       /* Grid Styles */
-      .grid-container {
+      .service-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(1, 1fr); /* Start with one column */
         gap: 20px;
         padding: 20px;
+        text-align: center;
       }
 
-      .grid-item {
+      .service-grid-item {
         background-color: var(--secondary-background-color);
         border-radius: 10px;
-        padding: 10px;
-        text-align: center;
+        padding: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
 
-      .grid-item img {
+      .service-grid-item h2 {
+        color: var(--text-color);
+        margin-bottom: 15px;
+      }
+
+      .service-grid-item p {
+        color: var(--text-color);
+        margin-bottom: 15px;
+      }
+
+      .service-grid-item a {
+        color: var(--accent-color);
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .service-grid-item img {
         max-width: 100%;
         height: auto;
-        border-radius: 5px;
+        border-radius: 50%; /* Create round images */
+        margin-bottom: 15px; /* Space between image and text */
       }
 
-      .grid-item h3 {
-        font-weight: 700;
-        color: var(--text-color);
+      /* Responsive Grid Styles */
+      @media (min-width: 481px) {
+        .service-grid {
+          grid-template-columns: repeat(
+            2,
+            1fr
+          ); /* Two columns for larger than 480px */
+        }
+      }
+
+      @media (min-width: 769px) {
+        .service-grid {
+          grid-template-columns: repeat(
+            5,
+            1fr
+          ); /* Five columns for larger than 768px */
+        }
       }
       /* End Grid Styles */
-
-      /* Card Styles */
-      .card-container {
-        margin: 50px 0;
-      }
-
-      .card-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        transition: transform 0.5s ease-out;
-        background-color: var(--background-color);
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-      }
-
-      .card-item:nth-child(odd) .card-image {
-        order: 2;
-      }
-
-      .card-item:nth-child(even) .card-text {
-        order: 2;
-      }
-
-      .card-image,
-      .card-text {
-        flex: 50%;
-        padding: 20px;
-      }
-
-      .card-image img,
-      .card-text {
-        width: 100%;
-        max-width: 600px;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-      }
-
-      .card-text {
-        text-align: left;
-        color: var(--text-color);
-      }
-
-      .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-      }
-
-      @media screen and (max-width: 768px) {
-        .card-item {
-          flex-direction: column;
-        }
-
-        .card-item .card-text,
-        .card-item .card-image {
-          order: unset;
-        }
-
-        .card-image img,
-        .card-text {
-          max-width: 100%;
-        }
-      }
-      /* End Card Styles */
 
       /* Responsive Styles */
       @media screen and (max-width: 768px) {
@@ -228,116 +194,67 @@
         <a href="#" class="header-button">Termin Buchen</a>
       </div>
     </header>
-    <section class="cards">
-      <div class="card-item">
-        <div class="card-image card">
-          <img
-            src="https://images.unsplash.com/photo-1623225088166-eea1cdc9775a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Gesichtsbehandlung"
-          />
-        </div>
-        <div class="card-text card">
-          <h2>Gesicht</h2>
-          <p>
-            Erleben Sie eine erfrischende Gesichtsbehandlung für klare und
-            strahlende Haut.
-          </p>
-        </div>
+    <section class="service-grid">
+      <div class="service-grid-item">
+        <img
+          src="https://source.unsplash.com/random/?facial"
+          alt="Gesichtsbehandlung"
+        />
+        <h2>Gesichtsbehandlungen</h2>
+        <p>
+          Unsere Gesichtsbehandlungen sind darauf ausgerichtet, Ihre Haut zum
+          Strahlen zu bringen und Probleme wie Akne oder Pigmentflecken gezielt
+          zu behandeln.
+        </p>
+        <a href="#">Mehr erfahren</a>
       </div>
-    </section>
-    <section class="grid">
-      <div class="grid-container">
-        <!-- Erstes Grid-Element -->
-        <div class="grid-item">
-          <img
-            src="https://source.unsplash.com/random/?massage"
-            alt="Traditionelle Thai Massage"
-          />
-          <h3>Traditionelle Thai Massage</h3>
-        </div>
-
-        <!-- Zweites Grid-Element -->
-        <div class="grid-item">
-          <img
-            src="https://source.unsplash.com/random/?oil massage"
-            alt="Thai Öl Massage"
-          />
-          <h3>Thai Öl Massage</h3>
-        </div>
-
-        <!-- Drittes Grid-Element -->
-        <div class="grid-item">
-          <img
-            src="https://source.unsplash.com/random/?aromatherapy"
-            alt="Aroma Therapie Massage"
-          />
-          <h3>Aroma Therapie Massage</h3>
-        </div>
-
-        <!-- Weitere Grid-Elemente ... -->
-
-        <div class="card-item">
-          <div class="card-text card">
-            <h2>Peeling</h2>
-            <p>
-              Unser sanftes Peeling entfernt abgestorbene Hautzellen und fördert
-              eine gesunde Hauterneuerung.
-            </p>
-          </div>
-          <div class="card-image card">
-            <img
-              src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?q=80&w=1601&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Peeling"
-            />
-          </div>
-        </div>
-
-        <div class="card-item">
-          <div class="card-image card">
-            <img
-              src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Needling"
-            />
-          </div>
-          <div class="card-text card">
-            <h2>Needling</h2>
-            <p>
-              Micro-Needling stimuliert die Haut, um die Produktion von Kollagen
-              zu erhöhen und das Erscheinungsbild zu verbessern.
-            </p>
-          </div>
-        </div>
-
-        <div class="card-item">
-          <div class="card-text card">
-            <h2>Carboxy</h2>
-            <p>
-              Die Carboxytherapie verbessert die Hautelastizität und reduziert
-              das Erscheinungsbild von feinen Linien und Falten.
-            </p>
-          </div>
-          <div class="card-image card">
-            <img
-              src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Carboxytherapie"
-            />
-          </div>
-        </div>
+      <div class="service-grid-item">
+        <img src="https://source.unsplash.com/random/?foots" alt="Fußpflege" />
+        <h2>Fußpflege</h2>
+        <p>
+          Eine medizinische Fußpflege hilft, Ihre Füße gesund zu halten und kann
+          spezifische Fußprobleme behandeln.
+        </p>
+        <a href="#">Mehr erfahren</a>
+      </div>
+      <div class="service-grid-item">
+        <img
+          src="https://source.unsplash.com/random/?eyelashes"
+          alt="Wimpern- und Augenbrauenbehandlungen"
+        />
+        <h2>Wimpern- und Augenbrauenbehandlungen</h2>
+        <p>
+          Definieren Sie Ihre Augen mit unseren Wimpern- und
+          Augenbrauenbehandlungen für einen dauerhaften, schönen Look.
+        </p>
+        <a href="#">Mehr erfahren</a>
+      </div>
+      <div class="service-grid-item">
+        <img
+          src="https://source.unsplash.com/random/?skin"
+          alt="Entfernung von Hautanomalien"
+        />
+        <h2>Entfernung von Hautanomalien</h2>
+        <p>
+          Unsere Elektrokoagulationsbehandlungen bieten eine effektive Lösung
+          zur Entfernung von Hautanomalien.
+        </p>
+        <a href="#">Mehr erfahren</a>
+      </div>
+      <div class="service-grid-item">
+        <img
+          src="https://source.unsplash.com/random/?makeup"
+          alt="Permanent Make-up"
+        />
+        <h2>Permanent Make-up</h2>
+        <p>
+          Erzielen Sie lang anhaltende Schönheit und Konturen mit unserem
+          professionellen Permanent Make-up.
+        </p>
+        <a href="#">Mehr erfahren</a>
       </div>
     </section>
   </body>
 </html>
 
-<script>
-  window.addEventListener("scroll", function () {
-    document.querySelectorAll(".card-item").forEach(function (item, index) {
-      var rect = item.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom >= 0) {
-        item.style.transform = "translateX(0)";
-      } else {
-        item.style.transform =
-          "translateX(" + (index % 2 === 0 ? "-100px" : "100px") + ")";
-      }
-    });
-  });
-</script>
+<script></script>
