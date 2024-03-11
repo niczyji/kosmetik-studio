@@ -163,6 +163,78 @@
           ); /* Five columns for large devices */
         }
       }
+
+      /* Ende Responsive Grid */
+
+      /* Footer */
+      footer {
+        background: #f3f3f3;
+        font-family: "Raleway", sans-serif;
+        padding: 20px;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-contact-info {
+        margin-bottom: 20px;
+      }
+
+      .footer-contact-info h3,
+      .footer-contact-info p {
+        margin: 5px 0;
+      }
+
+      .icon-placeholder {
+        /* Replace this with the actual Icons8 icon HTML or image tag */
+      }
+
+      .footer-address span,
+      .footer-hours span,
+      .footer-phone span,
+      .footer-email span {
+        /* Add styling for the icons here */
+      }
+
+      .footer-legal a {
+        color: #4caf50;
+        text-decoration: none;
+        margin-right: 10px;
+      }
+
+      .footer-legal a:hover {
+        text-decoration: underline;
+      }
+
+      /* Contact Form Section */
+      .footer-form-section {
+        background-color: #f8f8f8;
+        padding: 20px;
+        border-radius: 4px;
+      }
+
+      /* Responsive Styles */
+      @media (min-width: 768px) {
+        .footer-container {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        .footer-contact-info,
+        .footer-form-section {
+          flex: 1;
+          margin-right: 10px;
+        }
+
+        .footer-form-section {
+          max-width: 50%;
+        }
+      }
+      /* Ende Contact Form */
     </style>
   </head>
   <body>
@@ -174,17 +246,7 @@
         <li><a href="#">Fotos</a></li>
         <li><a href="#">Preise</a></li>
         <li><a href="#">Kontakt</a></li>
-        <li>
-          <a
-            href="#"
-            style="
-              background-color: #cda589;
-              padding: 5px 15px;
-              border-radius: 5px;
-            "
-            >Termin Buchen</a
-          >
-        </li>
+        <li><a href="#">Termin Buchen</a></li>
       </ul>
     </nav>
     <header class="header">
@@ -264,6 +326,91 @@
         </div>
       </div>
     </section>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-contact-info">
+          <h3>Anschrift</h3>
+          <p class="footer-address">
+            <span class="icon-placeholder"></span>Kosmetik Studio Excellent
+          </p>
+          <p class="footer-street">Beispielstraße 123, 50667 Köln</p>
+          <p class="footer-hours">
+            <span class="icon-placeholder"></span>Mo - Fr: 09:00 - 19:00 Uhr
+          </p>
+          <p class="footer-phone">
+            <span class="icon-placeholder"></span>0221 12345678
+          </p>
+          <p class="footer-email">
+            <span class="icon-placeholder"></span>kontakt@example.com
+          </p>
+          <p class="footer-legal">
+            <a href="#">Impressum</a> | <a href="#">Datenschutz</a>
+          </p>
+        </div>
+        <section id="contactForm" class="footer-form-section">
+          <form
+            id="contact-form"
+            style="background-color: #f8f8f8; padding: 20px"
+          >
+            <div style="display: flex; justify-content: space-between">
+              <input
+                type="text"
+                id="formName"
+                name="name"
+                placeholder="Name"
+                required
+                style="margin-right: 10px"
+              />
+              <input
+                type="tel"
+                id="formPhone"
+                name="phone"
+                placeholder="Telefon"
+              />
+              <input
+                type="email"
+                id="formEmail"
+                name="email"
+                placeholder="E-Mail *"
+                required
+              />
+            </div>
+            <textarea
+              id="formMessage"
+              name="message"
+              placeholder="Nachricht *"
+              required
+              style="width: 100%; margin-top: 20px"
+            ></textarea>
+            <div style="display: flex; align-items: center; margin-top: 20px">
+              <div id="captcha-container" style="flex-grow: 1">
+                [Captcha Bild]
+              </div>
+              <input
+                type="text"
+                id="captcha"
+                name="captcha"
+                required
+                placeholder="Captcha"
+                pattern="[0-9]{5}"
+                style="flex-grow: 1; margin-right: 10px"
+              />
+              <button
+                type="submit"
+                style="
+                  background-color: #4caf50;
+                  color: white;
+                  border: none;
+                  padding: 10px 20px;
+                "
+              >
+                Absenden
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </footer>
   </body>
 </html>
 
