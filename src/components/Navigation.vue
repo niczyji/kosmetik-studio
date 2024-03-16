@@ -35,12 +35,89 @@
 
 <script>
 export default {
+  name: "navigation",
   data() {
     return {
-      bookingUrl: 'https://www.planity.com/de-DE/kosmetik-studio-excellent-50670-koln'
+      bookingUrl: "https://www.planity.com/de-DE/kosmetik-studio-excellent-50670-koln",
+      scrollPosition: null,
+      mobile: null,
+      mobileNav: null,
+      windowWidth: null,
     };
-  }
+  },
 };
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="scss" scoped>
+header {
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 99;
+  width: 100%;
+  position: fixed;
+  transition: all 0.5s ease;
+  color: #000;
+
+  &.scrolled-nav {
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    padding: 12px 0;
+    transition: all 0.5s ease;
+    width: 90%;
+    margin: 0 auto;
+
+    @media (min-width: 1140px) {
+      max-width: 1140px;
+    }
+  }
+
+  .branding {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 50px;
+      transition: .5s ease all;
+    }
+  }
+
+  .navigation,
+  .dropdown-nav {
+    list-style: none;
+
+    li {
+      display: inline-block;
+      text-transform: uppercase;
+      padding: 16px;
+      margin-left: 16px;
+
+      a {
+        color: #000;
+        text-decoration: none;
+
+        &:hover {
+          background-color: #ffd700
+        }
+      }
+    }
+  }
+
+  .link {
+    font-size: 14px;
+    transition: 0.5s ease all;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    
+    &:hover {
+      color: #ffd700;
+      border-color: #ffd700;
+    }
+  }
+
+  .icon {
+     }
+}
+</style>
+
