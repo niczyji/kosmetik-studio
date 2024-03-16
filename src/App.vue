@@ -1,15 +1,31 @@
-<script setup>
-import useWindow from "@/composables/useWindow";
-import DefaultLayout from "@/layouts/DefaultLayout.vue";
-
-const { Y, X } = useWindow();
-</script>
-
 <template>
-  <defaultLayout>
-    <h3>My Website</h3>
-    <div>Carousel Element</div>
-  </defaultLayout>
+  <div class="app">
+    <router-view />
+  </div>
 </template>
 
-<style scoped></style>./layouts/DefaultLayout.vue
+<script setup>
+</script>
+
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+}
+
+.app {
+  min-height: 100vh;
+  position: relative;
+  background-color: #f1f1f1;
+}
+.container {
+  padding: 0 20px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+</style>
