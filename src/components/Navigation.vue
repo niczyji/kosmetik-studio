@@ -5,28 +5,31 @@
         <img src="@/assets/logo.svg" alt="logo-excellent" />
       </div>
       <ul v-show="!mobile" class="navigation">
-        <li><router-link to="/">Startseite</router-link></li>
-        <li><router-link to="/about-us">Über uns</router-link></li>
-        <li><router-link to="/services">Behandlungen</router-link></li>
-        <li><router-link to="/prices">Preise</router-link></li>
-        <li><router-link to="/gallery">Galerie</router-link></li>
+        <li><router-link class="link" to="/">Startseite</router-link></li>
+        <li><router-link class="link" to="/about-us">Über uns</router-link></li>
+        <li><router-link class="link" to="/services">Behandlungen</router-link></li>
+        <li><router-link class="link" to="/prices">Preise</router-link></li>
+        <li><router-link class="link" to="/gallery">Galerie</router-link></li>
         <li>
-          <a :href="bookingUrl" target="_blank" rel="noopener noreferrer">Termin Buchen</a>
+          <a class="link" :href="bookingUrl" target="_blank" rel="noopener noreferrer">Termin Buchen</a>
         </li>
       </ul>
     </nav>
-    <div class="icon">
-      <i @click="toggleMobileNav" v-show="mobile" class="far fa-bars" :class="{ 'icon-active': mobileNav }"></i>
+    <div @click="toggleMobileNav" class="hamburger" :class="{ active: mobileNav }">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+
     <transition name="mobile-nav">
       <ul v-show="mobile" class="dropdown-nav">
-        <li><router-link to="/">Startseite</router-link></li>
-        <li><router-link to="/about-us">Über uns</router-link></li>
-        <li><router-link to="/services">Behandlungen</router-link></li>
-        <li><router-link to="/prices">Preise</router-link></li>
-        <li><router-link to="/gallery">Galerie</router-link></li>
+        <li><router-link class="link" to="/">Startseite</router-link></li>
+        <li><router-link class="link" to="/about-us">Über uns</router-link></li>
+        <li><router-link class="link" to="/services">Behandlungen</router-link></li>
+        <li><router-link class="link" to="/prices">Preise</router-link></li>
+        <li><router-link class="link" to="/gallery">Galerie</router-link></li>
         <li>
-          <a :href="bookingUrl" target="_blank" rel="noopener noreferrer">Termin Buchen</a>
+          <a class="link" :href="bookingUrl" target="_blank" rel="noopener noreferrer">Termin Buchen</a>
         </li>
       </ul>
     </transition>
@@ -44,6 +47,11 @@ export default {
       mobileNav: null,
       windowWidth: null,
     };
+  },
+  methods: {
+    toggleMobileNav() {
+      this.mobileNav = !this.mobileNav;
+    },
   },
 };
 </script>
@@ -71,6 +79,20 @@ header {
     @media (min-width: 1140px) {
       max-width: 1140px;
     }
+
+    ul,
+    .link {
+      font-weight: 500;
+      color: #000;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    .li {
+      text-transform: uppercase;
+      padding: 16px;
+      margin-left: 16px
+    }
   }
 
   .branding {
@@ -79,7 +101,7 @@ header {
 
     img {
       width: 50px;
-      transition: .5s ease all;
+      transition: 0.5s ease all;
     }
   }
 
@@ -96,10 +118,6 @@ header {
       a {
         color: #000;
         text-decoration: none;
-
-        &:hover {
-          background-color: #ffd700
-        }
       }
     }
   }
@@ -109,15 +127,43 @@ header {
     transition: 0.5s ease all;
     padding-bottom: 4px;
     border-bottom: 1px solid transparent;
-    
+
     &:hover {
       color: #ffd700;
       border-color: #ffd700;
     }
   }
 
-  .icon {
-     }
+  .hamburger {
+    cursor: pointer;
+    width: 25px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    right: 24px;
+    top: 30px;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #000;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
 }
 </style>
-
