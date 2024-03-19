@@ -5,14 +5,12 @@
         <img src="@/assets/logo.svg" alt="logo-excellent" />
       </div>
       <ul v-show="!mobile" class="navigation">
-        <li><router-link class="link" to="/">Startseite</router-link></li>
-        <li><router-link class="link" to="/about-us">Über uns</router-link></li>
-        <li><router-link class="link" to="/services">Behandlungen</router-link></li>
-        <li><router-link class="link" to="/prices">Preise</router-link></li>
-        <li><router-link class="link" to="/gallery">Galerie</router-link></li>
-        <li>
-          <a class="link" :href="bookingUrl" target="_blank" rel="noopener noreferrer">Termin Buchen</a>
-        </li>
+        <li><router-link class="link" :to="{ name: 'Home' }">Startseite</router-link></li>
+        <li><router-link class="link" :to="{ name: 'AboutUs' }">Über uns</router-link></li>
+        <li><router-link class="link" :to="{ name: 'Services' }">Behandlungen</router-link></li>
+        <li><router-link class="link" :to="{ name: 'Prices' }">Preise</router-link></li>
+        <li><router-link class="link" :to="{ name: 'Gallery' }">Galerie</router-link></li>
+        <li><a class="link" :href="bookingUrl" target="_blank" rel="noopener noreferrer">Termin Buchen</a></li>
       </ul>
     </nav>
     <div @click="toggleMobileNav" class="hamburger" :class="{ active: mobileNav }">
@@ -23,14 +21,12 @@
 
     <transition name="mobile-nav">
       <ul v-show="mobileNav" class="dropdown-nav">
-        <li><router-link class="link" to="/">StartseiteMOBILE</router-link></li>
-        <li><router-link class="link" to="/about-us">Über uns</router-link></li>
-        <li><router-link class="link" to="/services">Behandlungen</router-link></li>
-        <li><router-link class="link" to="/prices">Preise</router-link></li>
-        <li><router-link class="link" to="/gallery">Galerie</router-link></li>
-        <li>
-          <a class="link" :href="bookingUrl" target="_blank" rel="noopener noreferrer">Termin Buchen</a>
-        </li>
+        <li><router-link class="link" :to="{ name: 'Home' }">Startseite</router-link></li>
+        <li><router-link class="link" :to="{ name: 'AboutUs' }">Über uns</router-link></li>
+        <li><router-link class="link" :to="{ name: 'Services' }">Behandlungen</router-link></li>
+        <li><router-link class="link" :to="{ name: 'Prices' }">Preise</router-link></li>
+        <li><router-link class="link" :to="{ name: 'Gallery' }">Galerie</router-link></li>
+        <li><a class="link" :href="bookingUrl" target="_blank" rel="noopener noreferrer">Termin Buchen</a></li>
       </ul>
     </transition>
   </header>
@@ -43,7 +39,7 @@ export default {
     return {
       bookingUrl: "https://www.planity.com/de-DE/kosmetik-studio-excellent-50670-koln",
       scrollPosition: null,
-      mobile: true,
+      mobile: false,
       mobileNav: null,
       windowWidth: null,
     };
@@ -71,6 +67,7 @@ header {
   nav {
     display: flex;
     flex-direction: row;
+    position: relative;
     padding: 12px 0;
     transition: all 0.5s ease;
     width: 90%;
@@ -91,7 +88,7 @@ header {
     .li {
       text-transform: uppercase;
       padding: 16px;
-      margin-left: 16px
+      margin-left: 16px;
     }
   }
 
@@ -153,6 +150,7 @@ header {
     width: 100%;
     background: #000;
     transition: all 0.3s ease;
+    caret-color: transparent;
   }
 
   .hamburger.active span:nth-child(1) {
