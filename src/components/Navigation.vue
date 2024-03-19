@@ -5,30 +5,33 @@
         <img src="@/assets/logo.svg" alt="logo-excellent" />
       </div>
       <ul v-show="!mobile" class="navigation">
-        <li><router-link class="link" :to="{ name: 'Home' }">Startseite</router-link></li>
+        <li><router-link class="link" :to="{ name: 'Home' }">StartseiteD</router-link></li>
         <li><router-link class="link" :to="{ name: 'AboutUs' }">Über uns</router-link></li>
         <li><router-link class="link" :to="{ name: 'Services' }">Behandlungen</router-link></li>
         <li><router-link class="link" :to="{ name: 'Prices' }">Preise</router-link></li>
         <li><router-link class="link" :to="{ name: 'Gallery' }">Galerie</router-link></li>
         <li><a class="link" :href="bookingUrl" target="_blank" rel="noopener noreferrer">Termin Buchen</a></li>
       </ul>
-    </nav>
-    <div @click="toggleMobileNav" class="hamburger" :class="{ active: mobileNav }">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+      
+      <transition name="mobile-nav">
+        <ul v-show="mobileNav" class="dropdown-nav">
+          <li><router-link class="link" :to="{ name: 'Home' }">StartseiteM</router-link></li>
+          <li><router-link class="link" :to="{ name: 'AboutUs' }">Über uns</router-link></li>
+          <li><router-link class="link" :to="{ name: 'Services' }">Behandlungen</router-link></li>
+          <li><router-link class="link" :to="{ name: 'Prices' }">Preise</router-link></li>
+          <li><router-link class="link" :to="{ name: 'Gallery' }">Galerie</router-link></li>
+          <li><a class="link" :href="bookingUrl" target="_blank" rel="noopener noreferrer">Termin Buchen</a></li>
+        </ul>
+      </transition>
 
-    <transition name="mobile-nav">
-      <ul v-show="mobileNav" class="dropdown-nav">
-        <li><router-link class="link" :to="{ name: 'Home' }">Startseite</router-link></li>
-        <li><router-link class="link" :to="{ name: 'AboutUs' }">Über uns</router-link></li>
-        <li><router-link class="link" :to="{ name: 'Services' }">Behandlungen</router-link></li>
-        <li><router-link class="link" :to="{ name: 'Prices' }">Preise</router-link></li>
-        <li><router-link class="link" :to="{ name: 'Gallery' }">Galerie</router-link></li>
-        <li><a class="link" :href="bookingUrl" target="_blank" rel="noopener noreferrer">Termin Buchen</a></li>
-      </ul>
-    </transition>
+      <div class="hamburger-wrapper">
+        <div @click="toggleMobileNav" class="hamburger" :class="{ active: mobileNav }">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
   </header>
 </template>
 
@@ -66,6 +69,8 @@ header {
 
   nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-direction: row;
     position: relative;
     padding: 12px 0;
@@ -109,8 +114,8 @@ header {
     li {
       display: inline-block;
       text-transform: uppercase;
-      padding: 16px;
-      margin-left: 16px;
+      padding: 10px;
+      margin-left: 15px;
 
       a {
         color: #000;
@@ -122,7 +127,7 @@ header {
   .link {
     font-size: 14px;
     transition: 0.5s ease all;
-    padding-bottom: 4px;
+    padding-bottom: 5px;
     border-bottom: 1px solid transparent;
 
     &:hover {
