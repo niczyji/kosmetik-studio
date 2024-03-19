@@ -1,36 +1,40 @@
 <template>
-  <header :class="{ 'scrolled-nav': scrollPosition }">
+  <header :class="{ 'scrolled-nav': scrolledNav }">
     <nav>
       <div class="branding">
         <img src="@/assets/logo.svg" alt="logo-excellent" />
       </div>
       <ul v-show="!mobile" class="navigation">
-        <li><router-link class="link" :to="{ name: 'Home' }">StartseiteD</router-link></li>
+        <li><router-link class="link" :to="{ name: 'Home' }">Startseite</router-link></li>
         <li><router-link class="link" :to="{ name: 'AboutUs' }">Über uns</router-link></li>
         <li><router-link class="link" :to="{ name: 'Services' }">Behandlungen</router-link></li>
         <li><router-link class="link" :to="{ name: 'Prices' }">Preise</router-link></li>
         <li><router-link class="link" :to="{ name: 'Gallery' }">Galerie</router-link></li>
-        <li><a class="link" :href="bookingUrl" target="_blank" rel="noopener noreferrer">Termin Buchen</a></li>
+        <li>
+          <a class="link book-appointment" :href="bookingUrl" target="_blank" rel="noopener noreferrer"
+            >Termin Buchen</a
+          >
+        </li>
       </ul>
-      
+
+      <div class="hamburger-wrapper" v-show="mobile">
+        <button @click="toggleMobileNav" class="hamburger" :class="{ active: mobileNav }">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
       <transition name="mobile-nav">
         <ul v-show="mobileNav" class="dropdown-nav">
-          <li><router-link class="link" :to="{ name: 'Home' }">StartseiteM</router-link></li>
+          <li><router-link class="link" :to="{ name: 'Home' }">Startseite</router-link></li>
           <li><router-link class="link" :to="{ name: 'AboutUs' }">Über uns</router-link></li>
           <li><router-link class="link" :to="{ name: 'Services' }">Behandlungen</router-link></li>
           <li><router-link class="link" :to="{ name: 'Prices' }">Preise</router-link></li>
           <li><router-link class="link" :to="{ name: 'Gallery' }">Galerie</router-link></li>
-          <li><a class="link" :href="bookingUrl" target="_blank" rel="noopener noreferrer">Termin Buchen</a></li>
+          <li><a class="link book-appointment" :href="bookingUrl" target="_blank" rel="noopener noreferrer">Termin Buchen</a></li>
         </ul>
       </transition>
-
-      <div class="hamburger-wrapper">
-        <div @click="toggleMobileNav" class="hamburger" :class="{ active: mobileNav }">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
     </nav>
   </header>
 </template>
@@ -41,15 +45,40 @@ export default {
   data() {
     return {
       bookingUrl: "https://www.planity.com/de-DE/kosmetik-studio-excellent-50670-koln",
-      scrollPosition: null,
-      mobile: false,
+      scrolledNav: null,
+      mobile: null,
       mobileNav: null,
       windowWidth: null,
     };
   },
+  created() {
+    window.addEventListener("resize", this.checkScreen);
+    this.checkScreen();
+  },
+  mounted() {
+    window.addEventListener("scroll", this.updateScroll);
+  },
   methods: {
     toggleMobileNav() {
       this.mobileNav = !this.mobileNav;
+    },
+
+    updateScroll() {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 50) {
+        this.scrolledNav = true;
+      }
+      this.scrolledNav = false;
+    },
+
+    checkScreen() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 768) {
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+      this.mobileNav = false;
     },
   },
 };
@@ -62,10 +91,7 @@ header {
   width: 100%;
   position: fixed;
   transition: all 0.5s ease;
-  color: #000;
-
-  &.scrolled-nav {
-  }
+  color: var(--sandstone);
 
   nav {
     display: flex;
@@ -73,7 +99,7 @@ header {
     align-items: center;
     flex-direction: row;
     position: relative;
-    padding: 12px 0;
+    padding: 10px 0;
     transition: all 0.5s ease;
     width: 90%;
     margin: 0 auto;
@@ -85,15 +111,27 @@ header {
     ul,
     .link {
       font-weight: 500;
-      color: #000;
+      color: var(--black);
       list-style: none;
       text-decoration: none;
+
+      .book-appointment {
+        background-color: var(--cream);
+        color: var(--sandstone);
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        
+        &:hover {
+          background-color: var(--coffee-brown);
+          color: var(--white-rock);
+        }
+      }
     }
 
     .li {
-      text-transform: uppercase;
-      padding: 16px;
-      margin-left: 16px;
+      padding: 15px;
+      margin-left: 15px;
     }
   }
 
@@ -113,14 +151,45 @@ header {
 
     li {
       display: inline-block;
-      text-transform: uppercase;
       padding: 10px;
       margin-left: 15px;
 
       a {
-        color: #000;
+        color: var(--black);
         text-decoration: none;
       }
+    }
+  }
+
+  .dropdown-nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    max-width: 250px;
+    height: 100%;
+    background-color: var(--white);
+    top: 0;
+    left: 0;
+
+    li {
+      margin-left: 0;
+      .link {
+        color: var(--black);
+      }
+    }
+
+    .mobile-nav-enter-active,
+    .mobile-nav-leave-active {
+      transition: 1s ease all;
+    }
+
+    .mobile-nav-enter-form,
+    .mobile-nav-leave-to {
+      transform: translateX(-250px);
+    }
+
+    .mobile-nav-enter-to {
+      transform: translateX(0);
     }
   }
 
@@ -131,8 +200,8 @@ header {
     border-bottom: 1px solid transparent;
 
     &:hover {
-      color: #ffd700;
-      border-color: #ffd700;
+      color: var(--coffee-brown);
+      border-color: var(--coffee-brown);
     }
   }
 
@@ -168,6 +237,22 @@ header {
 
   .hamburger.active span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
+  }
+}
+
+.scrolled-nav {
+  background-color: var(--black);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  nav {
+    padding: 8px 0;
+
+    .branding {
+      img {
+        width: 40px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+    }
   }
 }
 </style>
