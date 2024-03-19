@@ -22,8 +22,8 @@
     </div>
 
     <transition name="mobile-nav">
-      <ul v-show="mobile" class="dropdown-nav">
-        <li><router-link class="link" to="/">Startseite</router-link></li>
+      <ul v-show="mobileNav" class="dropdown-nav">
+        <li><router-link class="link" to="/">StartseiteMOBILE</router-link></li>
         <li><router-link class="link" to="/about-us">Über uns</router-link></li>
         <li><router-link class="link" to="/services">Behandlungen</router-link></li>
         <li><router-link class="link" to="/prices">Preise</router-link></li>
@@ -43,7 +43,7 @@ export default {
     return {
       bookingUrl: "https://www.planity.com/de-DE/kosmetik-studio-excellent-50670-koln",
       scrollPosition: null,
-      mobile: null,
+      mobile: true,
       mobileNav: null,
       windowWidth: null,
     };
@@ -143,7 +143,8 @@ header {
     justify-content: space-between;
     position: absolute;
     right: 24px;
-    top: 30px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .hamburger span {
