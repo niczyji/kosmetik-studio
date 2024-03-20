@@ -12,6 +12,15 @@ import Navigation from '@/components/Navigation.vue';
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+:root {
+  --black: #000;
+  --white: #fff;
+  --cream: #f3eeea;
+  --white-rock: #ebe3d5;
+  --coffee-brown: #b0a695;
+  --sandstone: #3B352E;
+}
+
 * {
   padding: 0;
   margin: 0;
