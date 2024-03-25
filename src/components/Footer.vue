@@ -3,7 +3,8 @@
     <div class="px-8 py-12 mx-auto max-w-7xl md:px-12 lg:px-32">
       <div class="xl:grid xl:grid-cols-3 xl:gap-8">
         <div>
-          <p class="text-2xl font-bold">Kosmetik Studio EXCELLENT</p>
+          <img src="@/assets/logo.svg" alt="Kosmetik Studio EXCELLENT Logo" class="h-20 mb-2 w-25" />
+          <p class="text-xl font-bold">Kosmetik Studio EXCELLENT</p>
           <p class="mt-2 text-sm font-medium text-gray-500 lg:w-4/5">Hansaring 23, 50670 Köln</p>
         </div>
         <div class="mt-12 lg:mt-0 xl:col-span-2">
@@ -26,20 +27,26 @@
             <div>
               <h3 class="text-base text-black">Kontakt</h3>
               <ul role="list" class="mt-4 space-y-2">
-                <li>Telefon: 0178 7046251</li>
                 <li>
-                  e-Mail: <a href="mailto:excellent-center@web.de" class="hover:text-black">excellent-center@web.de</a>
+                  <a href="tel:+491787046251" class="flex items-center hover:text-black">
+                    <img src="@/assets/call-outline.svg" class="inline w-6 h-6 mr-2" alt="Telefon" />
+                    Telefon: 0178 7046251
+                  </a>
+                </li>
+                <li>
+                  <img src="@/assets/mail-outline.svg" class="inline w-6 h-6 mr-2" alt="E-Mail" />
+                  <a href="mailto:excellent-center@web.de" class="hover:text-black">e-Mail: excellent-center@web.de</a>
                 </li>
                 <li>
                   <a href="https://www.instagram.com/kosmetikstudiokoeln" class="hover:text-black">
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="inline w-6 h-6 mr-2"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
+        xmlns="http://www.w3.org/2000/svg"
+        class="inline w-6 h-6 mr-2"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="black"
+        stroke-width="2"
+      >
                       <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -49,22 +56,18 @@
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         d="M16 11.37a4 4 0 11-8 0 4 4 0 018 0zM18.5 7.5h.01"
-                      />
-                    </svg>
-                    kosmetikstudiokoeln
+                      /></svg
+                    >kosmetikstudiokoeln
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://maps.app.goo.gl/Xd27Rq8cj7TJQUDY9"
-                    class="flex items-center hover:text-black"
-                  >
+                  <a href="https://maps.app.goo.gl/Xd27Rq8cj7TJQUDY9" class="flex items-center hover:text-black">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="w-6 h-6 mr-2"
                       fill="none"
                       viewBox="0 0 24 24"
-                      stroke="currentColor"
+                      stroke="black"
                       stroke-width="2"
                     >
                       <path
