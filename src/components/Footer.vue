@@ -3,12 +3,19 @@
     <div class="px-8 py-12 mx-auto max-w-7xl md:px-12 lg:px-32">
       <div class="xl:grid xl:grid-cols-3 xl:gap-8">
         <div>
-          <img src="@/assets/logo.svg" alt="Kosmetik Studio EXCELLENT Logo" class="h-20 mb-2 w-25" />
+          <img
+            src="@/assets/logo.svg"
+            alt="Kosmetik Studio EXCELLENT Logo"
+            class="w-auto h-10 mb-2 sm:h-12 md:h-16 lg:h-20"
+          />
           <p class="text-xl font-bold">Kosmetik Studio EXCELLENT</p>
           <p class="mt-2 text-sm font-medium text-gray-500 lg:w-4/5">Hansaring 23, 50670 Köln</p>
         </div>
+
         <div class="mt-12 lg:mt-0 xl:col-span-2">
-          <div class="grid grid-cols-2 gap-8 text-sm font-medium text-gray-500 lg:grid-cols-2">
+          <div
+            class="grid grid-cols-2 gap-8 text-sm font-medium text-gray-500 max-sm:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2"
+          >
             <div>
               <h3 class="text-base text-black">Öffnungszeiten</h3>
               <ul role="list" class="mt-4 space-y-2">
@@ -40,13 +47,13 @@
                 <li>
                   <a href="https://www.instagram.com/kosmetikstudiokoeln" class="hover:text-black">
                     <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="inline w-6 h-6 mr-2"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="black"
-        stroke-width="2"
-      >
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="inline w-6 h-6 mr-2"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="black"
+                      stroke-width="2"
+                    >
                       <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
