@@ -15,10 +15,13 @@
         <div>
           <h3 class="text-base text-black">Öffnungszeiten</h3>
           <ul role="list" class="mt-4 space-y-2">
-            <li><span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Montag - Freitag: 10:00 - 19:00</li>
+            <li>
+              <span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Montag - Freitag: 10:00 - 19:00
+            </li>
             <li><span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Samstag: 10:00 - 16:00</li>
             <li>
-              <span class="inline-block w-3 h-3 mr-2 bg-white border border-black rounded-full"></span>Sonntag: Geschlossen
+              <span class="inline-block w-3 h-3 mr-2 bg-white border border-black rounded-full"></span>Sonntag:
+              Geschlossen
             </li>
           </ul>
         </div>
@@ -26,69 +29,68 @@
         <div>
           <h3 class="text-base text-black">Kontakt</h3>
           <ul role="list" class="mt-4 space-y-2">
-                <li>
-                  <a href="tel:+491787046251" class="flex items-center hover:text-black">
-                    <img src="@/assets/call-outline.svg" class="inline w-6 h-6 mr-2" alt="Telefon" />
-                    Telefon: 0178 7046251
-                  </a>
-                </li>
-                <li>
-                  <img src="@/assets/mail-outline.svg" class="inline w-6 h-6 mr-2" alt="E-Mail" />
-                  <a href="mailto:excellent-center@web.de" class="hover:text-black">e-Mail: excellent-center@web.de</a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/kosmetikstudiokoeln" class="hover:text-black">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="inline w-6 h-6 mr-2"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="black"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M7.5 3C4.462 3 2 5.462 2 8.5v7C2 18.538 4.462 21 7.5 21h9c3.038 0 5.5-2.462 5.5-5.5v-7C22 5.462 19.538 3 16.5 3h-9z"
-                      />
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M16 11.37a4 4 0 11-8 0 4 4 0 018 0zM18.5 7.5h.01"
-                      /></svg
-                    ><span>kosmetikstudiokoeln</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://maps.app.goo.gl/Xd27Rq8cj7TJQUDY9" class="flex items-center hover:text-black">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-6 h-6 mr-2"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="black"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7z"
-                      />
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 11a2 2 0 110-4 2 2 0 010 4z" />
-                    </svg>
-                    <span>Google Maps</span>
-                  </a>
-                </li>
-              </ul>
+            <li>
+              <a href="tel:+491787046251" class="flex items-center hover:text-black">
+                <img src="@/assets/call-outline.svg" class="inline w-6 h-6 mr-2" alt="Telefon" />
+                Telefon: 0178 7046251
+              </a>
+            </li>
+            <li>
+              <img src="@/assets/mail-outline.svg" class="inline w-6 h-6 mr-2" alt="E-Mail" />
+              <a href="mailto:excellent-center@web.de" class="hover:text-black">e-Mail: excellent-center@web.de</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/kosmetikstudiokoeln" class="hover:text-black">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="inline w-6 h-6 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="black"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M7.5 3C4.462 3 2 5.462 2 8.5v7C2 18.538 4.462 21 7.5 21h9c3.038 0 5.5-2.462 5.5-5.5v-7C22 5.462 19.538 3 16.5 3h-9z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M16 11.37a4 4 0 11-8 0 4 4 0 018 0zM18.5 7.5h.01"
+                  /></svg
+                ><span>kosmetikstudiokoeln</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://maps.app.goo.gl/Xd27Rq8cj7TJQUDY9" class="flex items-center hover:text-black">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="black"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7z"
+                  />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 11a2 2 0 110-4 2 2 0 010 4z" />
+                </svg>
+                <span>Google Maps</span>
+              </a>
+            </li>
+          </ul>
         </div>
-
         <div>
           <h3 class="text-base text-black">Allgemein</h3>
-          <ul role="list" class="mt-4 space-y-2">
-            <li><a href="#" class="hover:text-black">Datenschutzrichtlinie</a></li>
-            <li><a href="#" class="hover:text-black">Nutzungsbedingungen</a></li>
-            <li><a href="#" class="hover:text-black">Impressum</a></li>
-            <li><a href="#" class="hover:text-black">AGB</a></li>
+          <ul role="list" class="mt-4 space-y-2 dropdown-nav">
+            <li><router-link to="/privacy-policy" class="link">Datenschutzrichtlinie</router-link></li>
+            <li><router-link to="/terms-of-use" class="link">Nutzungsbedingungen</router-link></li>
+            <li><router-link to="/imprint" class="link">Impressum</router-link></li>
+            <li><router-link to="/general-conditions" class="link">AGB</router-link></li>
           </ul>
         </div>
       </div>
