@@ -1,39 +1,31 @@
 <template>
   <footer>
     <div class="px-8 py-12 mx-auto max-w-7xl md:px-12 lg:px-32">
-      <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-        <div>
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
+        <div class="mb-4 lg:mb-0">
           <img
             src="@/assets/logo.svg"
             alt="Kosmetik Studio EXCELLENT Logo"
             class="w-auto h-10 mb-2 sm:h-12 md:h-16 lg:h-20"
           />
           <p class="text-xl font-bold">Kosmetik Studio EXCELLENT</p>
-          <p class="mt-2 text-sm font-medium text-gray-500 lg:w-4/5">Hansaring 23, 50670 Köln</p>
+          <p class="mt-2 text-sm font-medium text-gray-500">Hansaring 23, 50670 Köln</p>
         </div>
 
-        <div class="mt-12 lg:mt-0 xl:col-span-2">
-          <div
-            class="grid grid-cols-2 gap-8 text-sm font-medium text-gray-500 max-sm:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2"
-          >
-            <div>
-              <h3 class="text-base text-black">Öffnungszeiten</h3>
-              <ul role="list" class="mt-4 space-y-2">
-                <li><span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Montag: 10:00 - 19:00</li>
-                <li><span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Dienstag: 10:00 - 19:00</li>
-                <li><span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Mittwoch: 10:00 - 19:00</li>
-                <li><span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Donnerstag: 10:00 - 19:00</li>
-                <li><span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Freitag: 10:00 - 19:00</li>
-                <li><span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Samstag: 10:00 - 16:00</li>
-                <li>
-                  <span class="inline-block w-3 h-3 mr-2 bg-white border border-black rounded-full"></span>Sonntag:
-                  Geschlossen
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 class="text-base text-black">Kontakt</h3>
-              <ul role="list" class="mt-4 space-y-2">
+        <div>
+          <h3 class="text-base text-black">Öffnungszeiten</h3>
+          <ul role="list" class="mt-4 space-y-2">
+            <li><span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Montag - Freitag: 10:00 - 19:00</li>
+            <li><span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Samstag: 10:00 - 16:00</li>
+            <li>
+              <span class="inline-block w-3 h-3 mr-2 bg-white border border-black rounded-full"></span>Sonntag: Geschlossen
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base text-black">Kontakt</h3>
+          <ul role="list" class="mt-4 space-y-2">
                 <li>
                   <a href="tel:+491787046251" class="flex items-center hover:text-black">
                     <img src="@/assets/call-outline.svg" class="inline w-6 h-6 mr-2" alt="Telefon" />
@@ -64,7 +56,7 @@
                         stroke-linejoin="round"
                         d="M16 11.37a4 4 0 11-8 0 4 4 0 018 0zM18.5 7.5h.01"
                       /></svg
-                    >kosmetikstudiokoeln
+                    ><span>kosmetikstudiokoeln</span>
                   </a>
                 </li>
                 <li>
@@ -84,18 +76,25 @@
                       />
                       <path stroke-linecap="round" stroke-linejoin="round" d="M12 11a2 2 0 110-4 2 2 0 010 4z" />
                     </svg>
-                    Google Maps
+                    <span>Google Maps</span>
                   </a>
                 </li>
               </ul>
-            </div>
-          </div>
+        </div>
+
+        <div>
+          <h3 class="text-base text-black">Allgemein</h3>
+          <ul role="list" class="mt-4 space-y-2">
+            <li><a href="#" class="hover:text-black">Datenschutzrichtlinie</a></li>
+            <li><a href="#" class="hover:text-black">Nutzungsbedingungen</a></li>
+            <li><a href="#" class="hover:text-black">Impressum</a></li>
+            <li><a href="#" class="hover:text-black">AGB</a></li>
+          </ul>
         </div>
       </div>
     </div>
   </footer>
 </template>
-
 <script>
 export default {
   name: "FooterComponent",
