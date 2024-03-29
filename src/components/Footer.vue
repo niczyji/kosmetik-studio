@@ -13,10 +13,10 @@
         </div>
 
         <div>
-          <h3 class="text-base text-black">Öffnungszeiten</h3>
+          <h3 class="text-base font-bold text-black">Öffnungszeiten</h3>
           <ul role="list" class="mt-4 space-y-2">
             <li>
-              <span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Montag - Freitag: 10:00 - 19:00
+              <span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Mo - Fr: 10:00 - 19:00
             </li>
             <li><span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Samstag: 10:00 - 16:00</li>
             <li>
@@ -27,7 +27,7 @@
         </div>
 
         <div>
-          <h3 class="text-base text-black">Kontakt</h3>
+          <h3 class="text-base font-bold text-black">Kontakt</h3>
           <ul role="list" class="mt-4 space-y-2">
             <li>
               <a href="tel:+491787046251" class="flex items-center hover:text-black">
@@ -85,7 +85,7 @@
           </ul>
         </div>
         <div>
-          <h3 class="text-base text-black">Allgemein</h3>
+          <h3 class="text-base font-bold text-black">Allgemein</h3>
           <ul role="list" class="mt-4 space-y-2 dropdown-nav">
             <li><router-link to="/privacy-policy" class="link">Datenschutzrichtlinie</router-link></li>
             <li><router-link to="/terms-of-use" class="link">Nutzungsbedingungen</router-link></li>
