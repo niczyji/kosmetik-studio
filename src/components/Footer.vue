@@ -8,18 +8,21 @@
             alt="Kosmetik Studio EXCELLENT Logo"
             class="w-auto h-10 mb-2 sm:h-12 md:h-16 lg:h-20"
           />
-          <p class="text-xl font-bold">Kosmetik Studio EXCELLENT</p>
-          <p class="mt-2 text-sm font-medium text-gray-500">Hansaring 23, 50670 Köln</p>
+          <p class="text-sm font-bold sm:text-md md:text-lg lg:text-xl">Kosmetik Studio EXCELLENT</p>          <p class="mt-2 text-xs font-medium text-gray-500 sm:text-sm md:text-base lg:text-lg">
+            Hansaring 23, 50670 Köln
+          </p>
         </div>
 
         <div>
-          <h3 class="text-base font-bold text-black">Öffnungszeiten</h3>
+          <h3 class="text-sm font-bold text-black sm:text-base md:text-lg lg:text-xl">Öffnungszeiten</h3>
           <ul role="list" class="mt-4 space-y-2">
-            <li>
+            <li class="text-xs sm:text-sm md:text-base lg:text-lg">
               <span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Mo - Fr: 10:00 - 19:00
             </li>
-            <li><span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Samstag: 10:00 - 16:00</li>
-            <li>
+            <li class="text-xs sm:text-sm md:text-base lg:text-lg">
+              <span class="inline-block w-3 h-3 mr-2 bg-black rounded-full"></span>Samstag: 10:00 - 16:00
+            </li>
+            <li class="text-xs sm:text-sm md:text-base lg:text-lg">
               <span class="inline-block w-3 h-3 mr-2 bg-white border border-black rounded-full"></span>Sonntag:
               Geschlossen
             </li>
@@ -27,19 +30,19 @@
         </div>
 
         <div>
-          <h3 class="text-base font-bold text-black">Kontakt</h3>
+          <h3 class="text-sm font-bold text-black sm:text-base md:text-lg lg:text-xl">Kontakt</h3>
           <ul role="list" class="mt-4 space-y-2">
-            <li>
+            <li class="text-xs sm:text-sm md:text-base lg:text-lg">
               <a href="tel:+491787046251" class="flex items-center hover:text-black">
                 <img src="@/assets/call-outline.svg" class="inline w-6 h-6 mr-2" alt="Telefon" />
-                Telefon: 0178 7046251
+                0178 7046251
               </a>
             </li>
-            <li>
+            <li class="text-xs sm:text-sm md:text-base lg:text-lg">
               <img src="@/assets/mail-outline.svg" class="inline w-6 h-6 mr-2" alt="E-Mail" />
-              <a href="mailto:excellent-center@web.de" class="hover:text-black">e-Mail: excellent-center@web.de</a>
+              <a href="mailto:excellent-center@web.de" class="hover:text-black">excellent-center@web.de</a>
             </li>
-            <li>
+            <li class="text-xs sm:text-sm md:text-base lg:text-lg">
               <a href="https://www.instagram.com/kosmetikstudiokoeln" class="hover:text-black">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -62,9 +65,9 @@
                 ><span>kosmetikstudiokoeln</span>
               </a>
             </li>
-            <li>
-              <a href="https://maps.app.goo.gl/Xd27Rq8cj7TJQUDY9" class="flex items-center hover:text-black">
-                <svg
+            <li class="text-xs sm:text-sm md:text-base lg:text-lg">
+              <a href="https://maps.app.goo.gl/Xd27Rq8cj7TJQUDY9" class="flex items-center hover:text-black"
+                ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="w-6 h-6 mr-2"
                   fill="none"
@@ -85,12 +88,20 @@
           </ul>
         </div>
         <div>
-          <h3 class="text-base font-bold text-black">Allgemein</h3>
+          <h3 class="text-sm font-bold text-black sm:text-base md:text-lg lg:text-xl">Allgemein</h3>
           <ul role="list" class="mt-4 space-y-2 dropdown-nav">
-            <li><router-link to="/privacy-policy" class="link">Datenschutzrichtlinie</router-link></li>
-            <li><router-link to="/terms-of-use" class="link">Nutzungsbedingungen</router-link></li>
-            <li><router-link to="/imprint" class="link">Impressum</router-link></li>
-            <li><router-link to="/general-conditions" class="link">AGB</router-link></li>
+            <li class="text-xs sm:text-sm md:text-base lg:text-lg">
+              <router-link to="/privacy-policy" class="link">Datenschutzrichtlinie</router-link>
+            </li>
+            <li class="text-xs sm:text-sm md:text-base lg:text-lg">
+              <router-link to="/terms-of-use" class="link">Nutzungsbedingungen</router-link>
+            </li>
+            <li class="text-xs sm:text-sm md:text-base lg:text-lg">
+              <router-link to="/imprint" class="link">Impressum</router-link>
+            </li>
+            <li class="text-xs sm:text-sm md:text-base lg:text-lg">
+              <router-link to="/general-conditions" class="link">AGB</router-link>
+            </li>
           </ul>
         </div>
       </div>
