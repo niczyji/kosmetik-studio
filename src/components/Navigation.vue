@@ -11,26 +11,26 @@
       </div>
 
       <ul v-show="!mobile" class="space-y-4 navigation lg:space-y-0 lg:flex lg:items-center lg:justify-between">
-        <li>
+        <li class="inline-block py-2 px-2.5 ml-3.5">
           <router-link class="text-black link hover:text-coffee-brown" :to="{ name: 'Home' }">Startseite</router-link>
         </li>
-        <li>
+        <li class="inline-block py-2 px-2.5 ml-3.5">
           <router-link class="text-black link hover:text-coffee-brown" :to="{ name: 'AboutUs' }">Über uns</router-link>
         </li>
-        <li>
+        <li class="inline-block py-2 px-2.5 ml-3.5">
           <router-link class="text-black link hover:text-coffee-brown" :to="{ name: 'Services' }"
             >Behandlungen</router-link
           >
         </li>
-        <li>
+        <li class="inline-block py-2 px-2.5 ml-3.5">
           <router-link class="text-black link hover:text-coffee-brown" :to="{ name: 'Prices' }">Preise</router-link>
         </li>
-        <li>
+        <li class="inline-block py-2 px-2.5 ml-3.5">
           <router-link class="text-black link hover:text-coffee-brown" :to="{ name: 'Gallery' }">Galerie</router-link>
         </li>
-        <li>
+        <li class="inline-block py-2 px-2.5 ml-3.5">
           <a
-            class="px-4 py-2 text-black transition-colors rounded-md link book-appointment hover:bg-coffee-brown hover:text-white"
+            class="px-4 py-2 text-black no-underline transition-colors rounded-md link book-appointment hover:bg-coffee-brown hover:text-white"
             :href="bookingUrl"
             target="_blank"
             rel="noopener noreferrer"
@@ -40,7 +40,11 @@
       </ul>
 
       <div v-show="mobile" class="hamburger-wrapper">
-        <button @click="toggleMobileNav" :class="{ active: mobileNav }" class="bg-transparent border-none cursor-pointer hamburger focus:outline-none">
+        <button
+          @click="toggleMobileNav"
+          :class="{ active: mobileNav }"
+          class="bg-transparent border-none cursor-pointer hamburger focus:outline-none"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -48,28 +52,46 @@
       </div>
 
       <transition name="mobile-nav">
-  <ul v-show="mobileNav" class="absolute left-0 z-50 flex flex-col w-full mt-1 bg-white shadow-md dropdown-nav top-full">
-    <li class="border-b border-gray-200">
-      <router-link class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" :to="{ name: 'Home' }">Startseite</router-link>
-    </li>
-    <li class="border-b border-gray-200">
-      <router-link class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" :to="{ name: 'AboutUs' }">Über uns</router-link>
-    </li>
-    <li class="border-b border-gray-200">
-      <router-link class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" :to="{ name: 'Services' }">Behandlungen</router-link>
-    </li>
-    <li class="border-b border-gray-200">
-      <router-link class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" :to="{ name: 'Prices' }">Preise</router-link>
-    </li>
-    <li class="border-b border-gray-200">
-      <router-link class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" :to="{ name: 'Gallery' }">Galerie</router-link>
-    </li>
-    <li>
-      <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" :href="bookingUrl" target="_blank" rel="noopener noreferrer">Termin Buchen</a>
-    </li>
-  </ul>
-</transition>
-
+        <ul
+          v-show="mobileNav"
+          class="fixed absolute top-0 left-0 z-50 flex flex-col w-full h-full max-w-xs mt-1 bg-white shadow-md dropdown-nav top-full"
+        >
+          <li class="border-b border-gray-200 py-2 px-2.5 ml-3.5">
+            <router-link class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" :to="{ name: 'Home' }"
+              >Startseite</router-link
+            >
+          </li>
+          <li class="border-b border-gray-200 py-2 px-2.5 ml-3.5">
+            <router-link class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" :to="{ name: 'AboutUs' }"
+              >Über uns</router-link
+            >
+          </li>
+          <li class="border-b border-gray-200 py-2 px-2.5 ml-3.5">
+            <router-link class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" :to="{ name: 'Services' }"
+              >Behandlungen</router-link
+            >
+          </li>
+          <li class="border-b border-gray-200 py-2 px-2.5 ml-3.5">
+            <router-link class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" :to="{ name: 'Prices' }"
+              >Preise</router-link
+            >
+          </li>
+          <li class="border-b border-gray-200 py-2 px-2.5 ml-3.5">
+            <router-link class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" :to="{ name: 'Gallery' }"
+              >Galerie</router-link
+            >
+          </li>
+          <li class="py-2 px-2.5 ml-3.5">
+            <a
+              class="block px-4 py-2 text-sm text-black text-gray-700 no-underline hover:bg-gray-100"
+              :href="bookingUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Termin Buchen</a
+            >
+          </li>
+        </ul>
+      </transition>
     </nav>
   </header>
 </template>
@@ -120,49 +142,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-header {
-  .book-appointment {
-    background-color: var(--cream);
-    color: var(--sandstone);
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .navigation,
-  .dropdown-nav {
-    list-style: none;
-
-    li {
-      display: inline-block;
-      padding: 10px;
-      margin-left: 15px;
-
-      a {
-        color: var(--black);
-        text-decoration: none;
-      }
-    }
-  }
-
-  .dropdown-nav {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    max-width: 250px;
-    height: 100%;
-    background-color: var(--white);
-    top: 0;
-    left: 0;
-
-    li {
-      margin-left: 0;
-      .link {
-        color: var(--black);
-      }
-    }
-
-    .mobile-nav-enter-active,
+ header {
+ /* .mobile-nav-enter-active,
     .mobile-nav-leave-active {
       transition: 1s ease all;
     }
@@ -175,19 +156,7 @@ header {
     .mobile-nav-enter-to {
       transform: translateX(0);
     }
-  }
-
-  .link {
-    font-size: 14px;
-    transition: 0.5s ease all;
-    padding-bottom: 5px;
-    border-bottom: 1px solid transparent;
-
-    &:hover {
-      color: var(--coffee-brown);
-      border-color: var(--coffee-brown);
-    }
-  }
+  } */
 
   .hamburger {
     cursor: pointer;
