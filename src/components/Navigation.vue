@@ -7,28 +7,32 @@
       class="flex justify-between items-center relative px-5 py-2.5 w-11/12 mx-auto transition-all duration-500 lg:max-w-6xl"
     >
       <div class="flex items-center branding">
-        <img src="@/assets/logo.svg" alt="logo-excellent" class="w-12 h-auto transition-all duration-500" />
+        <img
+          src="@/assets/logo.svg"
+          alt="logo-excellent"
+          class="w-12 h-auto transition-all duration-500 md:w-16 lg:w-20"
+        />
       </div>
 
-      <ul v-show="!mobile" class="space-y-4 navigation lg:space-y-0 lg:flex lg:items-center lg:justify-between">
-        <li class="inline-block py-2 px-2.5 ml-3.5">
+      <ul v-show="!mobile" class="navigation lg:space-y-0 lg:flex lg:items-center lg:justify-between">
+        <li class="inline-block px-1 py-2 sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
           <router-link class="text-black link hover:text-coffee-brown" :to="{ name: 'Home' }">Startseite</router-link>
         </li>
-        <li class="inline-block py-2 px-2.5 ml-3.5">
+        <li class="inline-block px-1 py-2 sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
           <router-link class="text-black link hover:text-coffee-brown" :to="{ name: 'AboutUs' }">Über uns</router-link>
         </li>
-        <li class="inline-block py-2 px-2.5 ml-3.5">
+        <li class="inline-block px-1 py-2 sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
           <router-link class="text-black link hover:text-coffee-brown" :to="{ name: 'Services' }"
             >Behandlungen</router-link
           >
         </li>
-        <li class="inline-block py-2 px-2.5 ml-3.5">
+        <li class="inline-block px-1 py-2 sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
           <router-link class="text-black link hover:text-coffee-brown" :to="{ name: 'Prices' }">Preise</router-link>
         </li>
-        <li class="inline-block py-2 px-2.5 ml-3.5">
+        <li class="inline-block px-1 py-2 sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
           <router-link class="text-black link hover:text-coffee-brown" :to="{ name: 'Gallery' }">Galerie</router-link>
         </li>
-        <li class="inline-block py-2 px-2.5 ml-3.5">
+        <li class="inline-block px-1 py-2 sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
           <a
             class="px-4 py-2 text-black no-underline transition-colors rounded-md link book-appointment hover:bg-coffee-brown hover:text-white"
             :href="bookingUrl"
@@ -142,8 +146,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- header {
- /* .mobile-nav-enter-active,
+header {
+  /* .mobile-nav-enter-active,
     .mobile-nav-leave-active {
       transition: 1s ease all;
     }
