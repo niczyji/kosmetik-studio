@@ -231,6 +231,7 @@ header {
     right: 24px;
     top: 50%;
     transform: translateY(-50%);
+    animation: pulse 1s ease-out 3;
   }
 
   .hamburger span {
@@ -265,6 +266,17 @@ header {
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       }
     }
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.8);
+    top: 12px;
+  }
+  to {
+    transform: scale(1.0);
+    top: 12px;
   }
 }
 </style>
