@@ -126,6 +126,7 @@
               <a
                 href="tel:+491787046251"
                 class="flex items-center transition-transform hover:text-black hover:scale-110"
+                title="Rufen Sie uns an"
               >
                 <img src="@/assets/call-outline.svg" alt="Telefon" class="w-6 h-6 mr-2" />
               </a>
@@ -133,6 +134,7 @@
               <a
                 href="mailto:excellent-center@web.de"
                 class="flex items-center transition-transform hover:text-black hover:scale-110"
+                title="Senden Sie uns eine E-Mail"
               >
                 <img src="@/assets/mail-outline.svg" alt="E-Mail" class="w-6 h-6 mr-2" />
               </a>
@@ -141,6 +143,7 @@
                 href="https://www.instagram.com/kosmetikstudiokoeln"
                 class="transition-transform hover:text-black hover:scale-110"
                 target="_blank"
+                title="Folgen Sie uns auf Instagram"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
