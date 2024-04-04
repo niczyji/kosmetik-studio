@@ -43,7 +43,7 @@
               <a href="mailto:excellent-center@web.de" class="hover:text-black">excellent-center@web.de</a>
             </li>
             <li class="text-xs sm:text-sm md:text-base lg:text-lg">
-              <a href="https://www.instagram.com/kosmetikstudiokoeln" class="hover:text-black">
+              <a href="https://www.instagram.com/kosmetikstudiokoeln" class="hover:text-black" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="inline w-6 h-6 mr-2"
@@ -66,7 +66,7 @@
               </a>
             </li>
             <li class="text-xs sm:text-sm md:text-base lg:text-lg">
-              <a href="https://maps.app.goo.gl/Xd27Rq8cj7TJQUDY9" class="flex items-center hover:text-black"
+              <a href="https://maps.app.goo.gl/Xd27Rq8cj7TJQUDY9" class="flex items-center hover:text-black" target="_blank"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="w-6 h-6 mr-2"

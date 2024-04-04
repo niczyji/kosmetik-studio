@@ -140,6 +140,7 @@
               <a
                 href="https://www.instagram.com/kosmetikstudiokoeln"
                 class="transition-transform hover:text-black hover:scale-110"
+                target="_blank"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
