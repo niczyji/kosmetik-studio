@@ -111,7 +111,7 @@
               >Galerie</router-link
             >
           </li>
-          <li class="py-2 px-2.5 mx-3.5">
+          <li class="py-2 px-2.5 mx-3.5 border-b border-gray-200">
             <a
               class="block px-2 py-2 text-sm text-black text-gray-700 underline underline-offset-2 hover:bg-gray-100"
               :href="bookingUrl"
@@ -120,7 +120,7 @@
               >Termin Buchen</a
             >
           </li>
-          <li class="py-2 border-t border-gray-200">
+          <li class="py-2 mt-2">
             <div class="flex items-center justify-center space-x-4">
               <!-- Telefon -->
               <a
