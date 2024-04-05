@@ -17,40 +17,40 @@
       <ul v-show="!mobile" class="navigation lg:space-y-0 lg:flex lg:items-center lg:justify-between">
         <li class="inline-block px-1 py-2 sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
           <router-link
-            class="text-black link hover:text-coffee-brown hover:underline underline-offset-2"
+            class="text-black link md:text-mg lg:text-lg hover:text-coffee-brown hover:underline underline-offset-2"
             :to="{ name: 'Home' }"
             >Startseite</router-link
           >
         </li>
-        <li class="inline-block px-1 py-2 sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
+        <li class="inline-block px-1 py-2 md:text-md lg:text-lg sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
           <router-link
             class="text-black link hover:text-coffee-brown hover:underline underline-offset-2"
             :to="{ name: 'AboutUs' }"
             >Über uns</router-link
           >
         </li>
-        <li class="inline-block px-1 py-2 sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
+        <li class="inline-block px-1 py-2 md:text-md lg:text-lg sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
           <router-link
             class="text-black link hover:text-coffee-brown hover:underline underline-offset-2"
             :to="{ name: 'Services' }"
             >Behandlungen</router-link
           >
         </li>
-        <li class="inline-block px-1 py-2 sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
+        <li class="inline-block px-1 py-2 md:text-md lg:text-lg sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
           <router-link
             class="text-black link hover:text-coffee-brown hover:underline underline-offset-2"
             :to="{ name: 'Prices' }"
             >Preise</router-link
           >
         </li>
-        <li class="inline-block px-1 py-2 sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
+        <li class="inline-block px-1 py-2 md:text-md lg:text-lg sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
           <router-link
             class="text-black link hover:text-coffee-brown hover:underline underline-offset-2"
             :to="{ name: 'Gallery' }"
             >Galerie</router-link
           >
         </li>
-        <li class="inline-block px-1 py-2 sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
+        <li class="inline-block px-1 py-2 md:text-md lg:text-lg sm:px-2 lg:px-3 sm:ml-2 lg:ml-4">
           <a
             class="px-4 py-2 text-black transition-shadow bg-white rounded-md shadow-sm hover:underline underline-offset-2 hover:text-coffee-brown hover:bg-coffee-brown hover:shadow-lg"
             :href="bookingUrl"
