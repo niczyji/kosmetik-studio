@@ -1,7 +1,10 @@
 <template>
   <div class="home">
+ 
+    
     <section class="hero">
-      <div class="hero-text container">
+      <div class="container hero-text">
+        <Carousel/>
         <h4>Entdecken Sie Ihr Strahlen im</h4>
         <hr />
         <h2>
@@ -15,9 +18,13 @@
 </template>
 
 <script>
+import Carousel from '@/components/Carousel.vue';
+
 export default {
   name: "Home",
-  components: {},
+  components: {
+    Carousel
+  }
 };
 </script>
 
